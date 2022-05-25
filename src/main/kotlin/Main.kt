@@ -2,6 +2,39 @@ import java.util.StringJoiner
 import kotlin.math.pow
 
 fun main(){
+    val box1 = Box(5,15,6);
+    val box2 = Box();
+
+}
+
+/*
+
+    val box2 = Box();
+    val box3 = Box();
+
+    println("Height: ${box1.heigth}");
+    println("Width: ${box1.width}");
+    println("Length: ${box1.length}");
+    println("Volume: ${box1.volume}");
+    box1.boxName = "Sho"
+    println("Box name: ${box1.boxName}");
+    box1.open();
+    box1.fillContents();
+    -------------------------------
+    val price1 = Price();
+    val price2 = Price();
+    val price3 = Price();
+
+    price1.openPurchase();
+
+    println(" 3 Computers: ${(price1.priceofComputer)*3}");
+    println(" 3 Keyboards: ${(price2.priceofKeyboard)*3}");
+    println(" 6 Mouses: ${(price3.priceofMouse)*6}");
+
+    price2.close();
+     */
+
+    /*
     // Boolean size 1bit false/true
     // Char size 16bit 'a' to 'z' '/n' '/101'
     /*Numbers
@@ -93,3 +126,5 @@ fun dobleTheValue(numberValue: Int): Int{
 fun favoriteFoodPrompt(name: String="Anonymous", favoriteFood: String="Pizza"): Unit{
     println("$name's favorite food is $favoriteFood")
 }
+
+     */
