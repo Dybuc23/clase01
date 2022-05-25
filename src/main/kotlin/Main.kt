@@ -2,7 +2,50 @@ import java.util.StringJoiner
 import kotlin.math.pow
 
 
-class App: DownloadListener {
+
+data class Person(
+    val id: String,
+    val fistName: String,
+    val lastName: String,
+    val country: String
+) {
+    fun getName() = "$fistName $lastName"
+}
+
+fun main() {
+    val person = Person("1", "Daniel", "Soto","Perú")
+    val person1 = Person("1", "Daniel", "Soto",  "Perú")
+    println(person == person1)
+    println(person.getName())
+
+//    //componentN
+//    println(person.component1())
+//    println(person.component2())
+//    println(person.component3())
+//    println(person.component4())
+
+    val (id, fistName, lastName, country) = person // destructuring declaration
+    println("$id $fistName $lastName $country")
+}
+
+/*
+    val downloader = Downloader()
+    downloader.downloadListener = object : DownloadListener {
+        override fun onDownloadStarted() {
+            println("Download started")
+        }
+
+        override fun onDownloadComplete(file: String) {
+            println("$file downloaded")
+        }
+
+        override fun onProgressUpdate(progress: Int) {
+            println("$progress% downloaded")
+        }
+    }
+    downloader.downloadFile("newSong.mp3")
+    ---------------------------------------------
+    class App: DownloadListener {
     override fun onDownloadStarted() {
         println("Download started")
     }
@@ -16,14 +59,11 @@ class App: DownloadListener {
     }
 
 }
-fun main(){
     val downloaderListener = App()
     val downloader = Downloader()
     downloader.downloadListener = downloaderListener
     downloader.downloadFile("newSong.mp3")
-}
-
-/*
+    ---------------------------------
     val coffeeMachine = PremiumCoffeeMachine(10000.0, "Brown")
     val info = coffeeMachine.machineInfo();
     val coffee = coffeeMachine.makeCoffee("CAPPUCCINO")
