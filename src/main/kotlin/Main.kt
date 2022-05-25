@@ -1,16 +1,46 @@
 import java.util.StringJoiner
 import kotlin.math.pow
 
-fun main(){
-    val box1 = Box(5,15,6);
-    val box2 = Box();
 
+class App: DownloadListener {
+    override fun onDownloadStarted() {
+        println("Download started")
+    }
+
+    override fun onDownloadComplete(file: String) {
+        println("$file downloaded")
+    }
+
+    override fun onProgressUpdate(progress: Int) {
+        println("$progress% downloaded")
+    }
+
+}
+fun main(){
+    val downloaderListener = App()
+    val downloader = Downloader()
+    downloader.downloadListener = downloaderListener
+    downloader.downloadFile("newSong.mp3")
 }
 
 /*
-
+    val coffeeMachine = PremiumCoffeeMachine(10000.0, "Brown")
+    val info = coffeeMachine.machineInfo();
+    val coffee = coffeeMachine.makeCoffee("CAPPUCCINO")
+    println(coffee)
+    println(info)
+    val simpleCoffeeMachine = CoffeeMachine(2000.0, "Black")
+    val coffe2 = simpleCoffeeMachine.makeCoffee("Espresso")
+    print(coffe2)
+    --------------------------------------------------------
+    coffeeMachine.makeCoffee();
+    coffeeMachine.makeCapuccino();
+    -----------------
+    val box1 = Box(5,15,6);
     val box2 = Box();
-    val box3 = Box();
+    -----------------------
+    val box1 = Box();
+    val box1 = Box();
 
     println("Height: ${box1.heigth}");
     println("Width: ${box1.width}");
